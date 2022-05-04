@@ -70,8 +70,8 @@ const getTemplate = async template => {
 const cleanTemplate = template => {
   return template
     // Remove indentation
-    .replace(/\n +/g, '\n')
-    .replace(/^ +/, '')
+    //.replace(/\n +/g, '\n')
+    //.replace(/^ +/, '')
     // Fix multiple blank lines
     .replace(/\n\n\n+/g, '\n\n')
     .replace(/\n\n$/, '\n')
@@ -86,6 +86,7 @@ const compileTemplate = async (releases, options) => {
       setup(Handlebars)
     }
   }
+  require('./handlebars-setup')(Handlebars)
   const compile = Handlebars.compile(await getTemplate(template), COMPILE_OPTIONS)
   if (template === 'json') {
     return compile({ releases, options })

@@ -1,0 +1,32 @@
+{{#each releases}}
+## [{{title}}]
+
+{{#if summary}}
+{{summary}}
+{{/if}}
+
+{{#commit-list commits heading='### Added' subject='^[Aa]dd'}}
+- {{#if breaking}}**Breaking change:** {{/if}}{{{custom this}}}
+{{/commit-list}}
+
+{{#commit-list commits heading='### Changed' subject='^[Cc]hange'}}
+- {{#if breaking}}**Breaking change:** {{/if}}{{{custom this}}}
+{{/commit-list}}
+
+{{#commit-list commits heading='### Deprecated' subject='^[Dd]eprecate'}}
+- {{#if breaking}}**Breaking change:** {{/if}}{{{custom this}}}
+{{/commit-list}}
+
+{{#commit-list commits heading='### Removed' subject='^[Rr]emove'}}
+- {{#if breaking}}**Breaking change:** {{/if}}{{{custom this}}}
+{{/commit-list}}
+
+{{#commit-list commits heading='### Fixed' subject='^[Ff]ix'}}
+- {{#if breaking}}**Breaking change:** {{/if}}{{{custom this}}}
+{{/commit-list}}
+
+{{#commit-list commits heading='### Security' subject='^[Ss]ecurity'}}
+- {{#if breaking}}**Breaking change:** {{/if}}{{{custom this}}}
+{{/commit-list}}
+
+{{/each}}
