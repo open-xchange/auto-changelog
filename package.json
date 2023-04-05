@@ -1,6 +1,6 @@
 {
   "name": "@open-xchange/auto-changelog",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "Command line tool for generating a changelog from git tags and commit history",
   "main": "./src/index.js",
   "bin": {
